@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import upload_area from "../../assets/upload_area.svg";
-import { toast } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 export default function AddProduct() {
   const [title, setTitle] = useState("");
