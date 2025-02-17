@@ -88,7 +88,10 @@ export default function ListProduct() {
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                <img src={row.image} alt={row.name} width="50" height="50" />
+                <img  src={row.image.replace(
+                  "http://localhost:4000",
+                  import.meta.env.VITE_APP_BACKEND_URL
+                )} alt={row.name} width="50" height="50" />
               </TableCell>
               <TableCell align="left">{row.name}</TableCell>
               <TableCell align="left">{row.old_price}</TableCell>
@@ -99,6 +102,8 @@ export default function ListProduct() {
                 sx={{ color: "#ff4d4d", cursor: "pointer", fontSize: "20px" }}
                 onClick={() => deleteProduct(row.id)}
               >
+
+
                 <MdDelete />
               </TableCell>
             </TableRow>
